@@ -32,11 +32,11 @@ s21_string.a: $(OBJECTS) $(SPRINTF_OBJECTS)
 
 style:
 	clang-format -style=google -n ./s21_string_files/*.c ./specificators/*.c ./tests/*.c *.c
-	clang-format -style=google -n ./s21_string_files/*.h ./specificators/*.h ./tests/*.h *.h
+	clang-format -style=google -n ./specificators/*.h ./tests/*.h *.h
 
 make_style:
 	clang-format -style=google -i ./s21_string_files/*.c ./specificators/*.c ./tests/*.c *.c
-	clang-format -style=google -i ./s21_string_files/*.h ./specificators/*.h ./tests/*.h *.h
+	clang-format -style=google -i ./specificators/*.h ./tests/*.h *.h
 
 clean:
 	rm -rf $(OBJECTS) $(EXECUTABLE) $(TESTS_OBJECTS) $(SPRINTF_OBJECTS) $(TEST_SPRINTF_OBJECTS) *.a *.gcov *.gcno *.gcda *.info report test *.o 

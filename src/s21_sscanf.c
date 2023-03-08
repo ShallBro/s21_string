@@ -66,7 +66,8 @@ int s21_switch_scan_spec(Prototype *prot, const char *format, const char *str,
   }
   switch (prot->spec) {
     case 'd':
-      write_count += s21_scanf_spec_d(prot, str, buff_str, args, width_counter, j);
+      write_count +=
+          s21_scanf_spec_d(prot, str, buff_str, args, width_counter, j);
       *j += s21_strlen(buff_str);
       break;
 
@@ -76,7 +77,8 @@ int s21_switch_scan_spec(Prototype *prot, const char *format, const char *str,
       break;
 
     case 's':
-      write_count += s21_scanf_spec_s(prot, str, args, buff_str, width_counter, j);
+      write_count +=
+          s21_scanf_spec_s(prot, str, args, buff_str, width_counter, j);
       *j += s21_strlen(buff_str);
 
       break;
@@ -94,8 +96,8 @@ void s21_scanf_spec_n(va_list args, int *j, int space_counter_for_n) {
   *p_args = *j - space_counter_for_n;
 }
 
-int s21_scanf_spec_s(Prototype *prot, const char *str, va_list args, char *buff_str,
-                 int width_counter, int *j) {
+int s21_scanf_spec_s(Prototype *prot, const char *str, va_list args,
+                     char *buff_str, int width_counter, int *j) {
   char *p_args = NULL;
   int k = 0;
   int ret = 1;
@@ -109,8 +111,8 @@ int s21_scanf_spec_s(Prototype *prot, const char *str, va_list args, char *buff_
   return ret;
 }
 
-int s21_scanf_spec_c(Prototype *prot, const char *str, char *buff_str, va_list args,
-                 int *j) {
+int s21_scanf_spec_c(Prototype *prot, const char *str, char *buff_str,
+                     va_list args, int *j) {
   char *p_args = NULL;
   int k = 0;
 
@@ -134,8 +136,8 @@ int s21_scanf_spec_c(Prototype *prot, const char *str, char *buff_str, va_list a
   return k;
 }
 
-int s21_scanf_spec_d(Prototype *prot, const char *str, char *buff_str, va_list args,
-                 int width_counter, int *j) {
+int s21_scanf_spec_d(Prototype *prot, const char *str, char *buff_str,
+                     va_list args, int width_counter, int *j) {
   void *p_args = NULL;
   int k = 0;
   int write_count = 0;
