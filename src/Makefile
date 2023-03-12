@@ -18,7 +18,7 @@ endif
 
 all: clean s21_string.a
 
-# Этап линковки
+# Этап линковки файлов
 $(EXECUTABLE): $(OBJECTS) $(SPRINTF_OBJECTS)
 	$(CC) $^ -o $@
 
