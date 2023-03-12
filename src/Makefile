@@ -18,10 +18,11 @@ endif
 
 all: clean s21_string.a
 
-$(EXECUTABLE): $(OBJECTS)
+# Этап линковки
+$(EXECUTABLE): $(OBJECTS) $(SPRINTF_OBJECTS)
 	$(CC) $^ -o $@
 
-.c.o:
+%.o: %.c
 	$(CC) $(CFLAGS) $< -o $@
 
 rebuild: clean all
